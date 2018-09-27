@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel- "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+        <script src = "app.js"></script>
+    <meta charset="UTF-8">
+    <title>Scraping With Mongoose</title>
+    <style>
+      body { 
+        background-color: lightskyblue;
+      
+      }
+      #wrapper {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+      }
+      #articles {
+        display: inline-block;
+        overflow: auto;
+        width: 80%;
+        height: 700px;
+        position: relative;
+        left: 200px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #saved-article{
+        display: inline-block;
+        overflow: auto;
+        width: 60%;
+        height: 700px;
+      }
+      #notes {
+        float: right;
+        width: 30%;
+        position: relative;
+        top: 100px;
+      }
+      textarea, input {
+        display: block;
+        width: 100%;
+        background-color: white;
+      }
+      input {
+        height: 36px;
+        font-size: 24px;
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+       
+      }
+      .navbar{
+          background: blue;
+      }
+      #bg{
+       
+    height: 100%; 
+    background-position: center;
+    position: relative;
+    border:15px solid  #333;
+      }
+
+      #header{
+        font-size: 16pt;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand">Mongo Scraper</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <!-- <a class="nav-item nav-link" a href = "/saved">Saved Articles</a> -->
+                    <a class="nav-item nav-link" id = "scrape">Scrape New Articles!</a>
+                  
+                  </div>
+                </div>
+              </nav>
+
+
+
+    <div id="wrapper">
+      <div id = "header">Click the Scrape Button to Get the latest NBA.com News!</div>
+      <div id = "bg">
+      <!-- <button id = "scrape-btn">Scrape Articles</button> -->
+      <div id="articles"></div>
+      <div id="notes"></div>
+    </div>
+  </div>
+    <div id = "saved-article"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
