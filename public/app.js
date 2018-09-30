@@ -5,7 +5,7 @@
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+      $("#articles").append("<p data-id='" + data[i]._id + "'>" + "Title:" + " " + data[i].title + "<br />" + "Link:" + " " + "nba.com" + data[i].link + "</p>");
     }
   });
 });
@@ -33,7 +33,7 @@
         // A textarea to add a new note body
         $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
         // A button to submit a new note, with the id of the article saved to it
-        $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+        $("#notes").append("<button data-id='" + data._id + "' class='savenote'>Save Note</button>");
   
         // If there's a note in the article
         if (data.note) {
@@ -49,8 +49,27 @@
       });
   });
   
+  // $(document).on("click", "#save-button", function() {
+  //   $.ajax({
+  //     method: "POST",
+  //     url: "/save",
+  //     data: { 
+  //       title: $(this).find("h5.content_list--title").text(),
+  //       link: $(this).find("h5.content_list--title").parent.find("a").attr("href")
+  //       // Value taken from title input
+  //       // noteTitle: $("#titleinput").val(),
+  //       // // Value taken from note textarea
+  //       // noteBody: $("#bodyinput").val()
+
+       
+        
+  //     }
+  //   })
+  // });
   // When you click the savenote button
-  $(document).on("click", "#savenote", function() {
+  $(document).on("click", ".savenote", function() {
+
+   console.log(this);
     
     // Grab the id associated with the article from the submit button
     var thisId = $(this).attr("data-id");
@@ -60,6 +79,7 @@
       method: "POST",
       url: "/articles/" + thisId,
       data: { 
+        
         // Value taken from title input
         noteTitle: $("#titleinput").val(),
         // Value taken from note textarea
@@ -76,7 +96,7 @@
 
        
 
-      $("#saved-article").append("<h2>" + data.title + "</h2>");
+      // $("#saved-article").append("<h2>" + data.title + "</h2>");
         
         
   
@@ -95,4 +115,3 @@
     // $("#titleinput").val("");
     // $("#bodyinput").val("");
   });
-  

@@ -8,11 +8,15 @@
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
     <style>
-      body { 
-        background-color: lightskyblue;
+      /* body {  */
+        /* background-image: url("../laptoptyping.png");
+    height: 704px; */
+    
+    /* background-position: center; */
+    /* position: relative; */
       
-      }
-      #wrapper {
+      /* } */
+      .container {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
@@ -20,11 +24,12 @@
       }
       #articles {
         display: inline-block;
+        color: white;
         overflow: auto;
-        width: 80%;
+        width: 100%;
         height: 700px;
         position: relative;
-        left: 200px;
+        
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
       #saved-article{
@@ -54,19 +59,79 @@
        
       }
       .navbar{
-          background: blue;
+          background-color: blue;
+
       }
       #bg{
-       
+    background-image: url("../laptoptyping.png");
+    height: 704px;
+    width: 100%;
     height: 100%; 
     background-position: center;
-    position: relative;
-    border:15px solid  #333;
+    position: relative; 
+    /* border:15px solid  #333; */
+      }
+      p{
+        border:5px solid  #333;
+        background-color: #6495ED;
+        position: relative;
+        text-align: center;
+        font-size: 16pt;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       }
 
       #header{
         font-size: 16pt;
         text-align: center;
+        background-color: #6495ED;
+        color: white;
+        width: 600px;
+        position: relative;
+        left: 150px;
+        bottom: 75px;
+        border:5px solid  #333;
+      }
+
+      h2{
+        background-color: #6495ED;
+        color: white;
+        border:5px solid  #333;
+        text-align: center;
+        font-size: 18pt;
+        position: relative;
+        right: 800px;
+        width: 1200px;
+        
+        /* border:5px solid  #333; */
+      }
+
+      #bodyinput{
+        height:80px;
+        width: 1200px;
+        text-align: center;
+        position: relative;
+        right: 800px;
+        
+        /* border:2px solid  #333; */
+        /* margin-top: 2px; */
+      }
+
+      html{
+        background: #F5F5F5;
+      }
+      
+      #titleinput{
+        width: 800px;
+        text-align: center;
+        position: relative;
+        right: 800px;
+        width: 1200px;
+        /* border:5px solid  #333; */
+      }
+
+      .savenote{
+        position: relative;
+        right: 245px;
       }
     </style>
   </head>
@@ -78,25 +143,27 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <!-- <a class="nav-item nav-link" a href = "/saved">Saved Articles</a> -->
+                    <a class="nav-item nav-link active" a href="/">Home <span class="sr-only">(current)</span></a>
+                    <!-- <a class="nav-item nav-link" a href = "/saved">Saved Articles</a>  -->
                     <a class="nav-item nav-link" id = "scrape">Scrape New Articles!</a>
                   
                   </div>
                 </div>
               </nav>
 
+              <div id = "bg">
 
-
-    <div id="wrapper">
+    <div class = "container">
       <div id = "header">Click the Scrape Button to Get the latest NBA.com News!</div>
-      <div id = "bg">
+      
       <!-- <button id = "scrape-btn">Scrape Articles</button> -->
       <div id="articles"></div>
       <div id="notes"></div>
     </div>
   </div>
-    <div id = "saved-article"></div>
+</div>
+  
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
