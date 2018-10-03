@@ -35,7 +35,7 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/scrapehw", { useNewUrlParser: true });
-"mongodb://localhost/scrapehw";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapehw";
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
