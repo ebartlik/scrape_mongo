@@ -33,8 +33,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/scrapehw", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/scrapehw", { useNewUrlParser: true });
+"mongodb://localhost/scrapehw";
 
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
+
+// Listen on the port
+app.listen(PORT, function() {
+  console.log("Listening on port: " + PORT);
+});
 // Routes
 
 // $(document).on("click", "#scrape", function() {
